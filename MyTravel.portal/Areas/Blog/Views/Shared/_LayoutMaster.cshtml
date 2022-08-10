@@ -1,0 +1,21 @@
+﻿@using Sitecore.Mvc
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link href="/Areas/Blog/Content/css/main.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="">Home</a>
+        <a href="/news">News</a>
+        <a href="/contacts">Contact</a>
+        <a href="/about">About</a>
+    </div>
+    <div>
+        @Html.Sitecore().Placeholder("main")
+    </div>
+</body>
+</html>
