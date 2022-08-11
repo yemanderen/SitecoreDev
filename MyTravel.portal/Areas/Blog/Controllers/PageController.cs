@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Glass.Mapper.Sc.Web.Mvc;
+using MyTravel.portal.Areas.Blog.Models;
+using Sitecore.Data.Fields;
+using Sitecore.Mvc.Presentation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +15,19 @@ namespace MyTravel.portal.Areas.Blog.Controllers
         // GET: Blog/Page
         public ActionResult Home()
         {
-            return View("~/Areas/Blog/Views/Page/Home.cshtml");
+            var sourceItem = RenderingContext.Current.Rendering.Item;
+            var pageModel = new PageModel();
+            pageModel.PageHeader = sourceItem["PageHeader"];
+            pageModel.Body = sourceItem["Body"];
+
+            DateField dateField = sourceItem.Fields["Date"];
+            if (dateField != null)
+            {
+                pageModel.Date = dateField.DateTime;
+            }
+
+            //return View("~/Areas/Blog/Views/Page/Home.cshtml");
+            return View("~/Areas/Blog/Views/Page/Home.cshtml", pageModel);
         }
 
         public ActionResult News()
@@ -26,7 +42,9 @@ namespace MyTravel.portal.Areas.Blog.Controllers
 
         public ActionResult About()
         {
-            return View("~/Areas/Blog/Views/Page/About.cshtml");
+            IMvcContext mvcContext = new MvcContext();
+            var source = mvcContext.GetContextItem<PageModel>();
+            return View("~/Areas/Blog/Views/Page/About.cshtml", source);
         }
     }
 }

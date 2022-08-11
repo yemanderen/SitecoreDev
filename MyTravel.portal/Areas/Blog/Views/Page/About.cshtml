@@ -1,1 +1,10 @@
-﻿<h1>About Page</h1>
+﻿@model MyTravel.portal.Areas.Blog.Models.PageModel
+
+<h1>About Page (Using Glass Mapper: Auto Mapping)</h1>
+<div>
+    <h4>@Model.PageHeader</h4>
+    <div>
+        <p>@Model.Body</p>
+        <p>@Model.Date</p>
+    </div>
+</div>

@@ -1,1 +1,11 @@
-﻿<h1>Home Page</h1>
+﻿@model MyTravel.portal.Areas.Blog.Models.PageModel
+
+<h1>Home Page</h1>
+
+<div>
+    <h4>@Model.PageHeader</h4>
+    <div>
+        <p>@Model.Body</p>
+        <p>@Model.Date</p>
+    </div>
+</div>
