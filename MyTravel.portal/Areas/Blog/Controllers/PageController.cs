@@ -12,6 +12,12 @@ namespace MyTravel.portal.Areas.Blog.Controllers
 {
     public class PageController : Controller
     {
+        //private readonly IMvcContext _mvcContext;
+
+        //public PageController(IMvcContext mvcContext)
+        //{
+        //    _mvcContext = mvcContext;
+        //}
         // GET: Blog/Page
         public ActionResult Home()
         {
@@ -29,7 +35,7 @@ namespace MyTravel.portal.Areas.Blog.Controllers
             ImageField imgField = sourceItem.Fields["Image"];
             if (imgField != null)
             {
-                pageModel.Image = new Glass.Mapper.Sc.Fields.Image()
+                pageModel.ContentImage = new Glass.Mapper.Sc.Fields.Image()
                 {
                     Src = Sitecore.Resources.Media.MediaManager.GetMediaUrl(imgField.MediaItem)
                 };

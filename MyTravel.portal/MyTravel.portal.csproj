@@ -295,11 +295,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Blog\Controllers\PageController.cs" />
     <Compile Include="Areas\Blog\Models\BasicItem.cs" />
+    <Compile Include="Areas\Blog\Models\Configurations\PageModelMap.cs" />
     <Compile Include="Areas\Blog\Models\PageModel.cs" />
+    <Compile Include="GlassCustomConfigurator.cs" />
+    <Compile Include="GlassMapperConfigurator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Blog\Content\css\main.css" />
+    <Content Include="favicon.ico" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

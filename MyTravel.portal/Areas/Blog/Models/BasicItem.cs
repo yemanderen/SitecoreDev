@@ -9,10 +9,10 @@ namespace MyTravel.portal.Areas.Blog.Models
 {
     public class BasicItem
     {
-        [SitecoreId]
+        //[SitecoreId]
         public virtual Guid Id { get; set; }
 
-        [SitecoreInfo(SitecoreInfoType.Name)]
+        //[SitecoreInfo(SitecoreInfoType.Name)]
         public string Name { get; set; }
     }
 }

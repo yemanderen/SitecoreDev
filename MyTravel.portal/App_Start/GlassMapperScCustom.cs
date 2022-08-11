@@ -3,6 +3,7 @@ using Glass.Mapper.Configuration;
 using Glass.Mapper.IoC;
 using Glass.Mapper.Maps;
 using Glass.Mapper.Sc.IoC;
+using MyTravel.portal.Areas.Blog.Models.Configurations;
 using IDependencyResolver = Glass.Mapper.Sc.IoC.IDependencyResolver;
 
 namespace MyTravel.portal.App_Start
@@ -33,8 +34,9 @@ namespace MyTravel.portal.App_Start
 		public static void AddMaps(IConfigFactory<IGlassMap> mapsConfigFactory)
         {
 			// Add maps here
-            // mapsConfigFactory.Add(() => new SeoMap());
-        }
+			// mapsConfigFactory.Add(() => new SeoMap());
+			mapsConfigFactory.Add(() => new PageModelMap());
+		}
     }
 }
 #endregion
