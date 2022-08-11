@@ -299,6 +299,7 @@
     <Compile Include="Areas\Blog\Models\PageModel.cs" />
     <Compile Include="GlassCustomConfigurator.cs" />
     <Compile Include="GlassMapperConfigurator.cs" />
+    <Compile Include="Pipelines\NotFoundProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -325,6 +326,7 @@
     <Content Include="App_Config\Include\Glass\z.Glass.Mapper.Sc.ViewRender.config.exclude" />
     <Content Include="App_Config\Include\Glass\Glass.Mapper.Sc.Start.config" />
     <Content Include="App_Config\Include\Glass\Glass.Mapper.Sc.config" />
+    <Content Include="App_Config\Include\z.GlassCustom\GlassCustom.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <PropertyGroup>

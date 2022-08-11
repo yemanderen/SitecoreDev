@@ -12,12 +12,13 @@ namespace MyTravel.portal.Areas.Blog.Controllers
 {
     public class PageController : Controller
     {
-        //private readonly IMvcContext _mvcContext;
+        private readonly IMvcContext _mvcContext;
 
-        //public PageController(IMvcContext mvcContext)
-        //{
-        //    _mvcContext = mvcContext;
-        //}
+        public PageController(IMvcContext mvcContext)
+        {
+            _mvcContext = mvcContext;
+        }
+
         // GET: Blog/Page
         public ActionResult Home()
         {
@@ -57,8 +58,8 @@ namespace MyTravel.portal.Areas.Blog.Controllers
 
         public ActionResult About()
         {
-            IMvcContext mvcContext = new MvcContext();
-            var source = mvcContext.GetContextItem<PageModel>();
+            //IMvcContext mvcContext = new MvcContext();
+            var source = _mvcContext.GetContextItem<PageModel>();
             return View("~/Areas/Blog/Views/Page/About.cshtml", source);
         }
     }
