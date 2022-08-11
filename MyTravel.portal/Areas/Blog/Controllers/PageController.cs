@@ -26,6 +26,15 @@ namespace MyTravel.portal.Areas.Blog.Controllers
                 pageModel.Date = dateField.DateTime;
             }
 
+            ImageField imgField = sourceItem.Fields["Image"];
+            if (imgField != null)
+            {
+                pageModel.Image = new Glass.Mapper.Sc.Fields.Image()
+                {
+                    Src = Sitecore.Resources.Media.MediaManager.GetMediaUrl(imgField.MediaItem)
+                };
+            }
+
             //return View("~/Areas/Blog/Views/Page/Home.cshtml");
             return View("~/Areas/Blog/Views/Page/Home.cshtml", pageModel);
         }

@@ -1,7 +1,7 @@
 ﻿using Glass.Mapper.Sc.Configuration.Attributes;
+using Glass.Mapper.Sc.Fields;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Web;
 
@@ -18,6 +18,7 @@ namespace MyTravel.portal.Areas.Blog.Models
         [SitecoreField(FieldId = "{AEE8205B-4A0F-499E-9C45-6DBC1F0DD7D1}")]
         public virtual DateTime Date { get; set; }
 
+        [SitecoreField(FieldId = "{708020DE-7CD8-4234-99E9-AC1563E1C051}")]
         public virtual Image Image { get; set; }
     }
 }

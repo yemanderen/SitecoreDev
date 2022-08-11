@@ -5,6 +5,10 @@
 <div>
     <h4>@Model.PageHeader</h4>
     <div>
+        @if (Model.Image != null)
+        {
+            <p><img src="@Model.Image.Src" /></p>
+        }        
         <p>@Model.Body</p>
         <p>@Model.Date</p>
     </div>
