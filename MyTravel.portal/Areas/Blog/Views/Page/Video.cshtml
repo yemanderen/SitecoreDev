@@ -1,0 +1,11 @@
+﻿@model MyTravel.portal.Areas.Blog.Models.VideoModel
+<h1> Video Page </ h1 >
+<div>
+    <h4>@Model.Title</h4>
+    <div>
+        <p>@Model.Date</p>
+        <div class="video-container">
+            <iframe height="498" width="510" src='@Model.VideoURL' frameborder="0" allowfullscreen=""></iframe>
+        </div>
+    </div>
+</div>

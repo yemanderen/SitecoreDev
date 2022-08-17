@@ -51,8 +51,42 @@ namespace MyTravel.portal.Areas.Blog.Controllers
             return View("~/Areas/Blog/Views/Page/News.cshtml");
         }
 
+        public ActionResult Video()
+        {
+            var sourceItem = RenderingContext.Current.Rendering.Item;
+            var pageModel = new VideoModel();
+            pageModel.Title = sourceItem["Title"];
+            pageModel.VideoURL = sourceItem["Video url"];
+
+            DateField dateField = sourceItem.Fields["Date"];
+            if (dateField != null)
+            {
+                pageModel.Date = dateField.DateTime;
+            }
+
+            return View("~/Areas/Blog/Views/Page/Video.cshtml", pageModel);
+        }
+
         public ActionResult Contacts()
         {
+            //Sitecore.Data.Items.Item homeItem = Sitecore.Context.Database.GetItem("/sitecore/content/Home");
+            //if (homeItem != null)
+            //{
+            //    var children = new Sitecore.Collections.ChildList(homeItem);
+            //    System.Text.StringBuilder sb = new System.Text.StringBuilder();
+            //    foreach (Sitecore.Data.Items.Item item in children)
+            //    {
+            //        sb.AppendLine(item.Paths.Path);
+            //    }
+            //}
+
+            //var db = Sitecore.Configuration.Factory.GetDatabase("master");
+            var item2 = Sitecore.Context.Database.GetItem("/sitecore/content/Home/News");
+            Sitecore.Links.UrlOptions urlOptions = (Sitecore.Links.UrlOptions)Sitecore.Links.UrlOptions.DefaultOptions.Clone();
+            urlOptions.SiteResolving = Sitecore.Configuration.Settings.Rendering.SiteResolving;
+            String url = Sitecore.Links.LinkManager.GetItemUrl(item2, urlOptions);
+
+
             return View("~/Areas/Blog/Views/Page/Contacts.cshtml");
         }
 

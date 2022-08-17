@@ -295,7 +295,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Blog\Controllers\PageController.cs" />
     <Compile Include="Areas\Blog\Models\BasicItem.cs" />
+    <Compile Include="Areas\Blog\Models\Configurations\VideoModelMap.cs" />
     <Compile Include="Areas\Blog\Models\Configurations\PageModelMap.cs" />
+    <Compile Include="Areas\Blog\Models\VideoModel.cs" />
     <Compile Include="Areas\Blog\Models\PageModel.cs" />
     <Compile Include="GlassCustomConfigurator.cs" />
     <Compile Include="GlassMapperConfigurator.cs" />
@@ -327,6 +329,7 @@
     <Content Include="App_Config\Include\Glass\Glass.Mapper.Sc.Start.config" />
     <Content Include="App_Config\Include\Glass\Glass.Mapper.Sc.config" />
     <Content Include="App_Config\Include\z.GlassCustom\GlassCustom.config" />
+    <Content Include="Areas\Blog\Views\Page\Video.cshtml" />
     <None Include="packages.config" />
   </ItemGroup>
   <PropertyGroup>
